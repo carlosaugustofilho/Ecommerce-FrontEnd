@@ -1,0 +1,56 @@
+<!-- Modal Template -->
+<ng-template #errorModal>
+  <div class="modal-body">
+    <p>Por favor, preencha todos os campos obrigatórios.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef?.hide()">Fechar</button>
+  </div>
+</ng-template>
+
+<div id="container">
+  <div class="login-container">
+    <div class="login-content">
+      <div class="image-section">
+        <img src="link_da_imagem_aqui" alt="Imagem de Login">
+        <h1>Faça login</h1>
+        <p>E entre para o nosso time</p>
+      </div>
+      <div class="form-section">
+        <div class="card shadow-lg">
+          <div class="card-header text-white">
+            <h2 class="text-center">LOGIN</h2>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit(errorModal)">
+              <div class="mb-3">
+                <label for="username" class="form-label">Email</label>
+                <input type="text" formControlName="username" class="form-control" id="username" placeholder="Email">
+                <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid" class="text-danger">
+                  Email é obrigatório
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Senha</label>
+                <input type="password" formControlName="password" class="form-control" id="password" placeholder="Senha">
+                <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="text-danger">
+                  Senha é obrigatória
+                </div>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" formControlName="rememberMe" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Lembrar-me</label>
+              </div>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">LOGIN</button>
+              </div>
+              <div class="d-grid gap-2" style="margin-top: 10px;">
+                <button type="button" class="btn btn-secondary">Cadastrar Usuário</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

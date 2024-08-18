@@ -1,0 +1,120 @@
+body {
+  background-color: #0b0b17;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.login-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1a1a2e;
+}
+
+.login-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.image-section {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: #23233a;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+}
+
+.card-header {
+  text-align: center;
+  color: #1f78d1;
+  font-size: 1.5rem;
+}
+
+.form-control {
+  background-color: #383850;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form-control:focus {
+  outline: none;
+  background-color: #50507a;
+  border-color: #1f78d1;
+  box-shadow: 0 0 5px #1f78d1;
+}
+
+.btn-primary, .btn-secondary {
+  background-color: #1f78d1;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary {
+  background-color: #354b7d;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  background-color: #143a6c;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .form-section, .image-section {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
